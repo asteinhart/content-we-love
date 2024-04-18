@@ -1,0 +1,359 @@
+@import url(https://fonts.googleapis.com/css?family=Public+Sans:400,400i,700,700i);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i);
+
+:root {
+  --collegeColor: #8b80f9;
+  --covidColor: #d1495b;
+  --movingColor: steelblue;
+  --nycColor: #2a7f62;
+  --gradColor: #ee964b;
+  --textWidth: 50vw;
+  --mobileWidth: 90vw;
+}
+
+body {
+  font-family: "Public Sans", Helvetica, sans-serif;
+  padding: 1em;
+  margin: 0 auto;
+  background: #f9f9f9;
+}
+
+button {
+  font-family: "Public Sans", Helvetica, sans-serif;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  background: #f9f9f9;
+  display: inline;
+}
+
+.title-container {
+  width: var(--textWidth);
+  max-width: 800px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-top: 15px;
+}
+
+.byline {
+  margin-top: 10px;
+}
+
+.body-text {
+  font-size: 18px;
+  line-height: 1.56;
+  width: var(--textWidth);
+  max-width: 800px;
+  margin: auto;
+}
+
+.tooltip {
+  position: relative;
+  font-size: 12px;
+  width: 21%;
+  z-index: 3;
+  background-color: white;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
+  pointer-events: none;
+}
+
+.entry {
+  width: 80vw;
+  padding: 0;
+  margin: auto;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Merriweather", Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.y-label {
+  font-size: 14px;
+}
+
+.axis text {
+  font-size: 10px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.chartContainer {
+  position: sticky;
+  top: 15vh;
+  z-index: 1;
+  margin: auto;
+  width: 100%;
+  opacity: 0;
+}
+
+.scroller {
+  position: relative;
+  background-color: white;
+  border: 1px black solid;
+  padding: 10px 20px;
+  width: 50%;
+  margin-top: 90vh;
+  margin-bottom: 20vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+#step1 {
+  margin-top: 10vh;
+}
+
+#step8 {
+  margin-bottom: 0;
+}
+
+#stepLast {
+  visibility: hidden;
+  margin-bottom: 10vh;
+}
+
+.book {
+  width: 25%;
+  margin-top: 35vh;
+  margin-bottom: 15vh;
+  z-index: 9999;
+  display: flex;
+  max-height: 20vh;
+}
+.scroller.book.left {
+  margin-left: 85px;
+}
+
+.scroller.book.right {
+  margin-right: 40px;
+}
+
+.nonfiction {
+  box-shadow: var(--covidColor) 0px 5px 15px;
+  border: 2px var(--covidColor) solid;
+}
+
+.fiction {
+  box-shadow: black 0px 5px 15px;
+  border: 1px black solid;
+}
+
+.book-info {
+  margin: auto;
+  margin-left: 0;
+  font-size: 14px;
+  -ms-flex: 0 0 66.67%;
+  flex: 0 0 66.67%;
+  max-width: 66.67%;
+  padding: 0 10px 0 10px;
+  max-height: 100%;
+}
+
+img {
+  max-width: 100px;
+}
+
+.book-img {
+  display: block;
+  margin: auto;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  height: 100%;
+}
+
+button {
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.collapsible {
+  color: black;
+  cursor: pointer;
+  display: inline;
+}
+
+.content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+a,
+.link {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#college-1 {
+  fill: red;
+  font-weight: 500;
+  color: red;
+}
+
+.college-text {
+  background-color: var(--collegeColor);
+  font-weight: 600;
+  border-radius: 5px;
+  color: white;
+}
+
+.college-summer-text {
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2px black dashed;
+}
+
+.covid-text {
+  background-color: var(--covidColor);
+  font-weight: 600;
+  border-radius: 5px;
+  color: white;
+}
+
+.moving-text {
+  background-color: var(--movingColor);
+  font-weight: 550;
+  border-radius: 5px;
+  color: white;
+}
+
+.nyc-text {
+  background-color: var(--nycColor);
+  font-weight: 600;
+  border-radius: 5px;
+  color: white;
+}
+
+.grad-text {
+  background-color: var(--gradColor);
+  font-weight: 600;
+  border-radius: 5px;
+  color: white;
+}
+
+.grey-text {
+  background-color: #cfd1d3;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.nonfiction-text {
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2.5px var(--covidColor) solid;
+}
+
+.periods.text {
+  font-weight: 600;
+  z-index: 9999;
+  fill: white;
+}
+
+.section.text {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.goodreads {
+  text-decoration: underline;
+}
+
+span {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.outro {
+  width: var(--textWidth);
+  margin: auto;
+}
+
+/* mobile CSS */
+@media (min-width: 320px) and (max-width: 999px) {
+  html {
+    max-width: 100%;
+  }
+
+  body {
+    width: 100%;
+    position: relative;
+  }
+
+  .byline {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+  .entry {
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  .chartContainer {
+    width: 95vw;
+    top: 30%;
+    margin: auto;
+    z-index: -1;
+  }
+  .scroller {
+    width: 65vw;
+    font-size: 16px;
+    z-index: 5;
+  }
+
+  .scroller.book.left {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .scroller.book.right {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title-container {
+    width: var(--mobileWidth);
+  }
+
+  .body-text {
+    width: var(--mobileWidth);
+    font-size: 20px;
+  }
+
+  .outro {
+    width: var(--mobileWidth);
+    font-size: 20px;
+  }
+}
