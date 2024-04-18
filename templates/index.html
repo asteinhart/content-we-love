@@ -11,5 +11,10 @@
       <input type="submit" value="Fetch">
   </form>
     <div>{{ articles }}</div>
+  
+   <script type="text/javascript">
+      const parsed = {{ data|tojson }}
+      console.log(parsed)
+  </script>
   </body>
 </html>

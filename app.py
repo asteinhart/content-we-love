@@ -14,10 +14,10 @@ def hello_input():
     response = requests.request("GET", url, headers=headers)
     articles = response.json()
 
-    return render_template("index.html", articles=articles)
+    return render_template("index.html", articles=articles, data=articles)
 
 
 @app.route("/")
 def get_all_schools():
 
-    return render_template("index.html", articles="test")
+    return render_template("index.html", articles="test", data={})
