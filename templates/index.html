@@ -3,18 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
     <title>Articles We Love</title>
   </head>
   <body>
     <h1>Test Pull</h1>
-    <form action="/fetch" method="get">
+  <form action="/fetch" method="get">
       <input type="submit" value="Fetch">
   </form>
-    <div>{{ articles }}</div>
+
+  <div class="header">
+    <h1>Articles We Love</h1>
+    <h2>Great reads, thoughfully curated by your friends</h2>
+  </div>
+
+  <div class="concierge">
+    <div class="filters">
+      <form action="/filter" method="get">
+        <input type="text" name="filter-param">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="articles">
+        <div class="section-header">
+            <p>Selected Articles ({{total_articles}})</p>
+        </div>
+        <div class="article-container">
+          {% for a in articles %}
+            <a class = "article" href = {{a.Link}}>
+                <h2>{{a.Name}}</h2>
+                <h3>{{a.Publication|first}}</h3>
+                <h3>{{ a["Primary Topic"]|first }}</h3>
+            </a>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+  </div>
   
-   <script type="text/javascript">
-      const parsed = {{ data|tojson }}
-      console.log(parsed)
-  </script>
   </body>
 </html>
