@@ -1,0 +1,130 @@
+{% extends "base.html" %} {% block content %}
+<div id="concierge">
+  <div class="filters">
+    <div class="filter-header">
+      <h3>What would you like to consume?</h3>
+      <p>
+        Mix and match the filters below to explore the recommendations from your
+        friends.
+      </p>
+    </div>
+    <hr />
+    <div class="filter-buttons">
+      <div class="fb">
+        I want
+        <select name="type" id="type-select" onchange="filter()">
+          <option value="All">any type of content</option>
+          <option value="Article">articles</option>
+          <option value="Book">books</option>
+          <option value="Music">music</option>
+          <option value="Podcast">podcasts</option>
+          <option value="Short Story / Poem">short stories or poems</option>
+          <option value="TV Show / Movie">TV shows or movies</option>
+          <option value="Video">videos</option>
+          <option value="Website">websites</option>
+          <option value="Other">something else</option>
+        </select>
+      </div>
+
+      <div class="fb">
+        about
+        <select name="topic" id="topic-select" onchange="filter()">
+          <option value="All">anything</option>
+          <option value="Art">art</option>
+          <option value="Culture">culture</option>
+          <option value="Economics">economics</option>
+          <option value="Education">education</option>
+          <option value="Health Care">health care</option>
+          <option value="Law">law</option>
+          <option value="Learning">learning</option>
+          <option value="Life and Love">life and love</option>
+          <option value="Politics">politics</option>
+          <option value="Religion">religion</option>
+          <option value="Science and Technology">science and technology</option>
+          <option value="Social Issues">social issues</option>
+          <option value="Stockton">Stockton, CA</option>
+          <option value="The World">the world</option>
+          <option value="Visualization">visualizations</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="articles">
+    <div class="section-header">
+      <div>Selected Content (<span id="article-count">0</span>)</div>
+      <div class="controls">
+        <input
+          type="radio"
+          id="view-grid"
+          name="view-controls"
+          onclick="layoutChange(this.value)"
+          value="grid"
+          checked
+        />
+        <label for="view-grid" id="label-grid">
+          <i class="fa fa-th-large" aria-hidden="true"> </i>
+          <span>Grid</span>
+        </label>
+        <input
+          type="radio"
+          id="view-list"
+          name="view-controls"
+          onclick="layoutChange(this.value)"
+          value="list"
+        />
+        <label for="view-list" id="label-list">
+          <i class="fa fa-list" aria-hidden="true"> </i>
+          <span> List</span>
+        </label>
+      </div>
+    </div>
+    <div class="articles-container list">
+      <template id="article-list-template">
+        <a class="article list" href="" target="_blank">
+          <div class="article-container list">
+            <div class="info-container list">
+              <div id="article-title"></div>
+              <div id="article-pub"></div>
+              <div id="article-type"></div>
+            </div>
+            <div class="meta-container list">
+              <div id="tag-container-list">
+                <!-- tags here -->
+              </div>
+            </div>
+          </div>
+        </a>
+      </template>
+
+      <template id="article-grid-template">
+        <a class="article grid" href="" target="_blank">
+          <div class="article-container grid">
+            <div class="info-container grid">
+              <div id="img">
+                <img src="" alt="" />
+              </div>
+              <div id="article-title"></div>
+              <div id="article-descrip"></div>
+            </div>
+            <div class="meta-container grid">
+              <div id="tag-container-grid">
+                <!-- tags here -->
+              </div>
+              <div id="article-type"></div>
+            </div>
+          </div>
+        </a>
+      </template>
+    </div>
+    <div class="submit-more">
+      Do you have a piece of content that should be on this list? Submit it
+      <a
+        target="_blank"
+        href="https://airtable.com/appfRI9pJ5OIOt9LV/pagpD64qZvaEDItjp/form"
+        >here</a
+      >.
+    </div>
+  </div>
+</div>
+
+{% endblock %}
