@@ -2,3 +2,6 @@
 env.py
 __pycache__/
 flask_session/
+.venv
+poetry.lock
+pyproject.toml
