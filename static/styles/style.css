@@ -96,10 +96,29 @@ body {
   font-size: clamp(14px,1.5vw,22px);
 }
 
-.filter-buttons{
+.filter-buttons {
 display: flex;
 flex-direction: column;
 gap: 10px;
+}
+
+#clear-filters {
+  border: 2px solid var(--primaryColor);
+  visibility: hidden;
+  border-radius: 10px;
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+  text-align: center;
+  padding: 7px 25px;
+  background-color: var(--offwhiteColor);
+  font-size: clamp(12px,1.2vw,20px);
+  font-weight: 500;
+}
+
+#clear-filters:hover {
+  background-color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  color: white;
 }
 
 .filter-buttons button {
@@ -109,7 +128,6 @@ gap: 10px;
   text-align: left;
   text-decoration: none;
   display: inline-block;
-  transition-duration: 0.4s;
   background-color: none;
   font-size: clamp(12px,1.2vw,20px);
 }

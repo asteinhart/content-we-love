@@ -5,6 +5,7 @@
 // cheapest option to deploy (singular app.... means what?)
 // add favorites
 // if dat already was fetch dont refetch
+// clear filters
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
@@ -115,27 +116,29 @@ class Article {
 
  //------ helper functions --------
 
-
-
-function filter(input) {
+function filter() {
   let records = JSON.parse(sessionStorage.getItem("records"));
 
   type = document.querySelector("#type-select").value;
   topic = document.querySelector("#topic-select").value;
 
   layout = document.querySelector('input[name="view-controls"]:checked').value;
-  console.log(layout);
+  clearFilterButton = document.querySelector("#clear-filters");
 
     if ((type == "All") & (topic == "All")) {
       filteredData = records;
+      clearFilterButton.style.visibility = "hidden";
     } else if (type == "All") {
       filteredData = records.filter((r) => r.topics.includes(topic));
+      clearFilterButton.style.visibility = "visible";
     } else if (topic == "All") {
       filteredData = records.filter((r) => r.type == type);
+      clearFilterButton.style.visibility = "visible";
     } else {
       filteredData = records.filter(
         (r) => (r.type == type) & r.topics.includes(topic)
       );
+      clearFilterButton.style.visibility = "visible";
     }
 
   renderArticles(filteredData, layout);
@@ -143,6 +146,12 @@ function filter(input) {
   if (!checkVisible(document.getElementsByClassName("header")[0])) {
     document.getElementById("concierge").scrollIntoView();
   }
+}
+
+function clearFilters() {
+  document.getElementById("type-select").value = "All";
+  document.getElementById("topic-select").value = "All";
+  filter();
 }
 
 function renderArticles(data, layout) {

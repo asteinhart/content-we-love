@@ -1,7 +1,3 @@
-# articles-we-love
+# Content We Love
 
-
-TODO
-* figure out how to deploy (maybe heroku)
-* create grid view with pictures and descriptions
-
+Check out the site [here](https://content-we-love-54fa79867044.herokuapp.com/).
