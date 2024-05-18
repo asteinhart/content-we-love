@@ -23,14 +23,20 @@
 
 /* mobile CSS */
 @media (min-width: 320px) and (max-width: 999px) {
+  .about-section {
+    width: 80%;
+    margin: auto;
+  }
+  
   .about-section h3{
-    padding: 10px;
-    max-width: 70%;
-    text-align: left;
     font-size: 20px;
+    margin: 0;
+    max-width: none;
   }
 
   .about-section p {
     font-size: 16px;
+    margin: 0;
+    max-width: none;
   }
 }

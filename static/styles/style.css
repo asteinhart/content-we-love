@@ -468,7 +468,6 @@ input[type="radio"]:checked + label {
 .article-container.list {
   flex-direction: column;
   flex-wrap: nowrap;
-
 }
 
 .article.list {
