@@ -22,7 +22,6 @@ ICON_DICT = {
   'Other': "fa fa-question-circle",
 };
 
-
 // --- article class -----
 
 class Article {
@@ -114,7 +113,9 @@ class Article {
   }
 }
 
-// ------ helper functions --------
+ //------ helper functions --------
+
+
 
 function filter(input) {
   let records = JSON.parse(sessionStorage.getItem("records"));
@@ -125,17 +126,17 @@ function filter(input) {
   layout = document.querySelector('input[name="view-controls"]:checked').value;
   console.log(layout);
 
-  if ((type == "All") & (topic == "All")) {
-    filteredData = records;
-  } else if (type == "All") {
-    filteredData = records.filter((r) => r.topics.includes(topic));
-  } else if (topic == "All") {
-    filteredData = records.filter((r) => r.type == type);
-  } else {
-    filteredData = records.filter(
-      (r) => (r.type == type) & r.topic.includes(topic)
-    );
-  }
+    if ((type == "All") & (topic == "All")) {
+      filteredData = records;
+    } else if (type == "All") {
+      filteredData = records.filter((r) => r.topics.includes(topic));
+    } else if (topic == "All") {
+      filteredData = records.filter((r) => r.type == type);
+    } else {
+      filteredData = records.filter(
+        (r) => (r.type == type) & r.topic.includes(topic)
+      );
+    }
 
   renderArticles(filteredData, layout);
   // only scroll up if under the div
@@ -185,6 +186,16 @@ function layoutChange(input) {
   renderArticles(records, input);
 }
 
+function sortSet(data) {
+  data.sort(
+    (a, b) =>
+      b.is_image.toString().localeCompare(a.is_image.toString()) ||
+      Date.parse(b.pub_date) - Date.parse(a.pub_date)
+  );
+  sessionStorage.setItem("records", JSON.stringify(data));
+}
+
+
 // ---- event listeners ----
 // if mobile force grid layout
 
@@ -203,14 +214,23 @@ var onResize = function(e) {
   }
   
 }
-
 window.addEventListener("resize", onResize);
 
 // ------------- init -----------------
 
 function init() {
   let records = JSON.parse(sessionStorage.getItem("records"));
+  document.querySelector("#loading").remove();
   renderArticles(records, "grid");
 }
 
-init();
+// ---- grab data from API and load -----
+fetch("/api/records")
+  .then((data) => data.json())
+  .then((data) => sortSet(data)).then(init);
+
+
+
+
+
+
