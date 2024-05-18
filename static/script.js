@@ -4,7 +4,7 @@
 // where to put API Key (https://stackoverflow.com/questions/3764366/how-do-i-add-api-keys-and-other-secure-stuff-to-heroku)
 // cheapest option to deploy (singular app.... means what?)
 // add favorites
-// clean up about section 
+// if dat already was fetch dont refetch
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
@@ -134,7 +134,7 @@ function filter(input) {
       filteredData = records.filter((r) => r.type == type);
     } else {
       filteredData = records.filter(
-        (r) => (r.type == type) & r.topic.includes(topic)
+        (r) => (r.type == type) & r.topics.includes(topic)
       );
     }
 
@@ -218,17 +218,24 @@ window.addEventListener("resize", onResize);
 
 // ------------- init -----------------
 
-function init() {
+function renderPage() {
   let records = JSON.parse(sessionStorage.getItem("records"));
   document.querySelector("#loading").remove();
   renderArticles(records, "grid");
-}
+};
 
-// ---- grab data from API and load -----
-fetch("/api/records")
+function init() {
+  let records = JSON.parse(sessionStorage.getItem("records"));
+  if (records) {
+    renderPage()
+  } else {
+  fetch("/api/records")
   .then((data) => data.json())
-  .then((data) => sortSet(data)).then(init);
+  .then((data) => sortSet(data)).then(renderPage);
+  }
+};
 
+init();
 
 
 

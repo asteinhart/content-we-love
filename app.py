@@ -5,7 +5,7 @@ from flask import Flask, render_template
 
 # flask is just allowing me to interact with url parameters
 app = Flask(__name__)
-app.secret_key = "super secret key"
+app.secret_key = "paoisdhjfgsalkjdfh"
 
 
 @app.route("/")

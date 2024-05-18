@@ -304,6 +304,7 @@ input[type="radio"]:checked + label {
   justify-content: left;
   flex-wrap: wrap;
   gap: 5px;
+  text-align: left;
 }
 
 #tag-container-list {
@@ -379,6 +380,10 @@ input[type="radio"]:checked + label {
 
 .tag.Health {
   background-color: slateblue;
+}
+
+.tag.Learning {
+  background-color: darkgreen;
 }
 
 .submit-more {
