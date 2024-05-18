@@ -7,10 +7,7 @@ import os
 
 
 def airtable_request(url_base):
-    # try:
-    #     AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
-    # except:
-    AIRTABLE_KEY = KEY
+    AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
 
     headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
     offset = 0
