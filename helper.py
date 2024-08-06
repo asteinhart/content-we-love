@@ -1,4 +1,4 @@
-# from env import KEY  # for local testing
+from env import KEY  # for local testing
 import requests
 import pandas as pd
 import numpy as np
@@ -8,9 +8,9 @@ import os
 
 def airtable_request(url_base):
 
-    # AIRTABLE_KEY = KEY  # for local testing
+    AIRTABLE_KEY = KEY  # for local testing
 
-    AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
+    # AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
 
     headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
     offset = 0
@@ -46,8 +46,8 @@ def add_description(row, clean_meta):
                 return r["description"]
 
 
-def clean_records():
-    # pull in data and format
+def pull_records():
+
     article_url = "https://api.airtable.com/v0/appfRI9pJ5OIOt9LV/for_api"
     article_list = airtable_request(article_url)
     art_df = pd.DataFrame([r["fields"] for r in article_list])
@@ -72,6 +72,14 @@ def clean_records():
     tab_clean = tab_df[["title", "pub", "link", "topics", "type", "pub_date"]]
 
     records = pd.concat([art_clean, tab_clean]).reset_index(drop=True)
+
+    return records
+
+
+def clean_records():
+    # pull in data and format
+
+    records = pull_records()
 
     with open("clean_meta.json", "r") as file:
         clean_meta = json.load(file)

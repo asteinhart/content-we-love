@@ -1,11 +1,9 @@
 // inspo https://apps.npr.org/best-books/#view=covers&year=2023
 // TODOs
-// have things load in the right order (js fetch, then html, then js make page?)
+// have things load in the right order (js fetch, then html, then js make page?) is this the right way?
 // where to put API Key (https://stackoverflow.com/questions/3764366/how-do-i-add-api-keys-and-other-secure-stuff-to-heroku)
 // cheapest option to deploy (singular app.... means what?)
 // add favorites
-// if dat already was fetch dont refetch
-// clear filters
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
