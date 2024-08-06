@@ -1,4 +1,4 @@
-from env import KEY  # for local testing
+# from env import KEY  # for local testing
 import requests
 import pandas as pd
 import numpy as np
@@ -8,9 +8,9 @@ import os
 
 def airtable_request(url_base):
 
-    AIRTABLE_KEY = KEY  # for local testing
+    # AIRTABLE_KEY = KEY  # for local testing
 
-    # AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
+    AIRTABLE_KEY = os.environ.get("AIRTABLE_KEY")
 
     headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
     offset = 0
