@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Content We Love</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a href="index.html">
+        <button>Home</button>
+      </a>
+      <a href="about.html">
+        <button>About</button>
+      </a>
+      <a
+        target="_blank"
+        href="https://airtable.com/appfRI9pJ5OIOt9LV/pagpD64qZvaEDItjp/form"
+      >
+        <button>Submit Content</button>
+      </a>
+    </div>
+    <div class="header">
+      <h1>Content We Love</h1>
+      <h2>Great reads, thoughtfully curated by your friends.</h2>
+    </div>
+
+    <div class="about-section">
+      <h3>What is this?</h3>
+      <p>
+        This is the continuation of a long-running project which I drastically
+        revamp every year or so. It started with my friends and I sending each
+        other interesting things on the internet as most people do. Knowing that
+        I was missing out on great content that my friends were sending other
+        people, I started
+        <a
+          href="https://thecommunitytab.substack.com/p/introducing-the-tab"
+          target="_blank"
+          >The Tab</a
+        >
+        which was a project to collect the most interesting and inspiring
+        content from you and your friends, share it, and provide a list of some
+        of the highlights, curated by other members of the community. After
+        about half a year of The Tab, we revived it with
+        <a href="https://www.reddit.com/r/thecontentclub/" target="_blank"
+          >Content Club</a
+        >, moving to a subreddit to place a greater emphasis on discussing this
+        content. That brings us to Content We Love, a project to compile all the
+        fun content we have collected and present it in a visually appealing
+        way. This also was a great project to build my web development skills. I
+        hope you enjoy it and find something compelling.
+      </p>
+      <p>Have any suggestions for improvements? Please let me know!</p>
+      <h3>Can I submit a piece of content I recently found?</h3>
+      <p>
+        Yes of course! Please use the form
+        <a
+          href="https://airtable.com/appfRI9pJ5OIOt9LV/pagpD64qZvaEDItjp/form"
+          target="_blank"
+          >here</a
+        >
+        to submit the piece of content.
+      </p>
+      <h3>
+        This looks a lot like
+        <a
+          href="https://apps.npr.org/best-books/#view=covers&year=2023"
+          target="_blank"
+          >NPR's Books We Love</a
+        >?
+      </h3>
+      <p>
+        Glad you noticed! This project was inspired by NPR's Books We Love
+        (formerly the Book Concierge). Although it was not used much in my
+        project, NPR does post the
+        <a href="https://github.com/nprapps/book-concierge" target="_blank"
+          >code</a
+        >
+        for their site which is fun.
+      </p>
+      <h3>What are some of your favorite pieces of content?</h3>
+      <p>Coming soon!</p>
+      <h3>
+        I'm dying to know details about the technical implementation, please do
+        share.
+      </h3>
+      <p>
+        Well, if you must know... The content lives in Airtable. A GitHub Action
+        runs a Python script that pulls the records, cleans them up, and commits
+        the result as a JSON file that the site loads directly.
+        A python package
+        <a href="https://pypi.org/project/url-metadata/" target="_blank"
+          >url-metadata</a
+        >
+        was used to scrape cover images and descriptions for content when
+        available. Layout and interaction are done through vanilla JS and CSS.
+        The site is a fully static page hosted on GitHub Pages. Code for the
+        project can be found
+        <a href="https://github.com/asteinhart/content-we-love/" target="_blank"
+          >here</a
+        >.
+      </p>
+    </div>
+
+    <div class="nav-bar footer">
+      <div class="created-by">
+        Created by <a href="https://asteinhart.github.io/">Austin Steinhart</a>
+      </div>
+      <div class="nav-bar footer">
+        <a href="index.html">
+          <button>Home</button>
+        </a>
+        <a href="about.html">
+          <button>About</button>
+        </a>
+        <a
+          target="_blank"
+          href="https://airtable.com/appfRI9pJ5OIOt9LV/pagpD64qZvaEDItjp/form"
+        >
+          <button>Submit Content</button>
+        </a>
+      </div>
+    </div>
+    <script src="static/script.js"></script>
+  </body>
+</html>
