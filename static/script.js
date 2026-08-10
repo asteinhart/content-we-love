@@ -236,7 +236,7 @@ function init() {
   if (records) {
     renderPage()
   } else {
-  fetch("/api/records")
+  fetch("data/records.json")
   .then((data) => data.json())
   .then((data) => sortSet(data)).then(renderPage);
   }
