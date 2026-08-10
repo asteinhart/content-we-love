@@ -1,6 +1,6 @@
 # Content We Love
 
-Check out the site [here](https://asteinhart.github.io/content-we-love/).
+Check out the site [here](https://contentwelove.austinsteinhart.com/).
 
 A static site: `index.html` / `about.html` + vanilla JS/CSS in `static/`.
 
